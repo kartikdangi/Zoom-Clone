@@ -1,7 +1,7 @@
-'use client';
+'use client';  
 import Loader from '@/components/Loader';
 import { useUser } from '@clerk/nextjs';
-import { TokenProvider } from '@stream-io/video-react-sdk';
+// import { TokenProvider } from '@stream-io/video-react-sdk';
 import { tokenProvider } from '@/actions/streams.actions';
 
 import {
@@ -30,7 +30,7 @@ export const StreamVideoProvider = ({children} : {children: ReactNode}) => {
 				}
 			})
 			setVideoClient(client);
-		}, [user, isLoaded]);
+		}, [user, isLoaded, apiKey]);
 	
 	  if(!videoClient) return <Loader />;
 	return (
